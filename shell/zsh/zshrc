@@ -1,10 +1,11 @@
 export ZSH="$HOME/.oh-my-zsh"
 export AWS_PAGER=""
+export ZSH_THEME=""
 
 # ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_DEFAULT_SESSION_NAME="jrnxf"
 
-plugins=(fzf-tab zsh-autosuggestions aws tmux gh fzf docker git forgit)
+plugins=(fzf-tab zsh-autosuggestions aws tmux gh fzf docker git)
 
 # fbr - checkout git branch (including remote branches)
 fbr() {
@@ -98,7 +99,9 @@ zstyle ':fzf-tab:complete:git*:*' continuous-trigger ''
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=~/bin:~/bin/garden:~/.local/bin:~/go/bin:~/.cargo/bin:~/.pyenv:~/Dev/pocus/development/scripts:$PATH
+export PNPM_HOME="~/Library/pnpm"
+
+export PATH=~/bin:~/.local/bin:~/go/bin:~/.cargo/bin:~/.pyenv:~/Dev/pocus/development/scripts:$PNPM_HOME:$PATH
 
 export POCUS_GARDEN_ENVIRONMENT="cloud"
 export GARDEN_LOGGER_TYPE="basic"
@@ -115,10 +118,8 @@ alias curltime="curl -w \"@$HOME/.curl-format.txt\" -o /dev/null -s "
 alias k=kubectl
 alias dev="~/Dev"
 alias reload="source ~/.zshrc"
-alias privateip="hostname -I"
-alias publicip="curl icanhazip.com"
 alias clear='printf "\33c\e[3J"'
-alias skrrrt="cd ~/Dev/skrrrt-til-u-hurt"
+alias skrrrt="cd ~/Dev/r3"
 alias s="skrrrt"
 alias dot="cd ~/dotfiles"
 alias x="exit"
@@ -151,13 +152,7 @@ glc() {
 
 unalias rd
 
-eval $(thefuck --alias)
-eval $(starship init zsh)
-
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
-# pnpm
-export PNPM_HOME="/Users/colby/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"
+eval "$(thefuck --alias)"
+eval "$(starship init zsh)"
