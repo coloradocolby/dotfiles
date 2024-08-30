@@ -502,7 +502,6 @@
             ]
           },
           {
-            "enabled": false,
             "description": "force me to learn",
             "manipulators": [
               {
