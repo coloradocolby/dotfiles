@@ -206,17 +206,21 @@
                 "type": "basic"
               },
               {
-                "description": "|",
+                "description": "&",
                 "from": {
-                  "key_code": "g",
+                  "key_code": "y",
                   "modifiers": { "mandatory": ["left_option", "left_command"] }
                 },
-                "to": [
-                  {
-                    "key_code": "backslash",
-                    "modifiers": ["left_shift"]
-                  }
-                ],
+                "to": [{ "key_code": "7", "modifiers": ["left_shift"] }],
+                "type": "basic"
+              },
+              {
+                "description": "|",
+                "from": {
+                  "key_code": "t",
+                  "modifiers": { "mandatory": ["left_option", "left_command"] }
+                },
+                "to": [{ "key_code": "backslash", "modifiers": ["left_shift"] }],
                 "type": "basic"
               },
               {
@@ -502,6 +506,7 @@
             ]
           },
           {
+            "enabled": true,
             "description": "force me to learn",
             "manipulators": [
               {
