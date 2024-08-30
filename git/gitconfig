@@ -52,3 +52,6 @@
 	trustExitCode = true
 [commit]
 	template = /Users/colby/.stCommitMsg
+[diff "lockb"]
+	textconv = bun
+	binary = true

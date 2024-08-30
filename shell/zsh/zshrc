@@ -99,9 +99,7 @@ zstyle ':fzf-tab:complete:git*:*' continuous-trigger ''
 
 source $ZSH/oh-my-zsh.sh
 
-export PNPM_HOME="~/Library/pnpm"
-
-export PATH=~/bin:~/.local/bin:~/go/bin:~/.cargo/bin:~/.pyenv:~/Dev/pocus/development/scripts:$PNPM_HOME:$PATH
+export PATH=~/bin:~/.local/bin:~/go/bin:~/.cargo/bin:~/.pyenv:~/Dev/pocus/development/scripts:$PATH
 
 export POCUS_GARDEN_ENVIRONMENT="cloud"
 export GARDEN_LOGGER_TYPE="basic"
@@ -119,8 +117,7 @@ alias k=kubectl
 alias dev="~/Dev"
 alias reload="source ~/.zshrc"
 alias clear='printf "\33c\e[3J"'
-alias skrrrt="cd ~/Dev/r3"
-alias s="skrrrt"
+alias u="cd ~/Dev/une.haus"
 alias dot="cd ~/dotfiles"
 alias x="exit"
 alias q="clear"
@@ -131,10 +128,15 @@ alias cat="bat"
 alias vimdiff='nvim -d'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+# for work
+export NEXT_PUBLIC_WORKSPACE_PREFIX="colby"
+
 alias sc="git commit -m 'squash [skip-ci]'"
 
 alias v='nvim'
 alias vim="nvim"
+
+alias pn="pnpm"
 
 # DOCKER
 alias d-ra='docker rmi -f $(docker images -aq)' # Remove all images
@@ -156,3 +158,11 @@ unalias rd
 
 eval "$(thefuck --alias)"
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/colby/Library/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
