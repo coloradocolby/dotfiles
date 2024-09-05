@@ -172,6 +172,17 @@
             ]
           },
           {
+            "description": "tab + left control to hyper",
+            "manipulators": [
+              {
+                "from": { "key_code": "tab", "modifiers": { "mandatory": ["left_command"] } },
+                "to": [{ "key_code": "right_shift", "modifiers": ["right_control", "right_option", "right_command"] }],
+                "to_if_alone": [{ "key_code": "tab" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "F4 to CMD+SPACE",
             "manipulators": [
               {
@@ -368,9 +379,9 @@
             "description": "symbols layer v2",
             "manipulators": [
               {
-                "description": "[",
+                "description": "{",
                 "from": { "key_code": "2" },
-                "to": [{ "key_code": "open_bracket" }],
+                "to": [{ "key_code": "open_bracket", "modifiers": ["left_shift"] }],
                 "type": "basic"
               },
               {
@@ -380,15 +391,15 @@
                 "type": "basic"
               },
               {
-                "description": "{",
+                "description": "[",
                 "from": { "key_code": "4" },
-                "to": [{ "key_code": "open_bracket", "modifiers": ["left_shift"] }],
+                "to": [{ "key_code": "open_bracket" }],
                 "type": "basic"
               },
               {
-                "description": "}",
+                "description": "]",
                 "from": { "key_code": "8" },
-                "to": [{ "key_code": "close_bracket", "modifiers": ["left_shift"] }],
+                "to": [{ "key_code": "close_bracket" }],
                 "type": "basic"
               },
               {
@@ -398,9 +409,9 @@
                 "type": "basic"
               },
               {
-                "description": "]",
+                "description": "}",
                 "from": { "key_code": "0" },
-                "to": [{ "key_code": "close_bracket" }],
+                "to": [{ "key_code": "close_bracket", "modifiers": ["left_shift"] }],
                 "type": "basic"
               },
               {
