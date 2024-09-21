@@ -108,6 +108,7 @@ export MANPAGER='nvim +Man!'
 export EDITOR="nvim"
 export PYENV_ROOT=~/.pyenv
 
+alias code="cursor"
 alias pp="cd ~/Dev/pocus"
 alias ppp="g branch -D colby/preview && g co -b colby/preview && g push -f && g co -"
 
@@ -166,3 +167,6 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# fixes some ghost characters in the shell
+LC_ALL=en_US.UTF-8
